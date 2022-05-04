@@ -81,15 +81,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // *** start ***
 // On first load, show home view
 showLoading("#main-content");
-$ajaxUtils.sendGetRequest(allCategoriesUrl,buildAndShowHomeHTML,true);
+$ajaxUtils.sendGetRequest(allCategoriesUrl,
+  buildAndShowHomeHTML,
+  true);
   // ***** <---- TODO: STEP 1: Substitute [...] ******
   // Explicitly setting the flag to get JSON from server processed into an object literal
 });
 // *** finish **
 
 
-// Builds HTML for the home page based on categories array
-// returned from the server.
+// Builds HTML for the home page based on categories array// returned from the server.
 function buildAndShowHomeHTML (categories) {
 
   // Load home snippet page
@@ -115,7 +116,7 @@ function buildAndShowHomeHTML (categories) {
       // it into the home html snippet.
       //
       // var homeHtmlToInsertIntoMainPage = ....
-      chosenCategoryShortName = "-" + chosenCategoryShortName + "-";
+      chosenCategoryShortName = "'" + chosenCategoryShortName + "'";
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategoryShortName);   
 
       // TODO: STEP 4: Insert the produced HTML in STEP 3 into the main page
